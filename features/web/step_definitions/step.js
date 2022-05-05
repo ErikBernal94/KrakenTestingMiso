@@ -118,8 +118,8 @@ When('I click the go back page list', async function () {
 
   //I click the page item of list 
 When('I click the page item of list {kraken-string}', async function (pageTitle) {
-    let element = await this.driver.$$('h3[aria-label=\"'+pageTitle+'\"]")');
-    console.log(element)
+    // let element = await this.driver.$$('h3[aria-label=\"'+pageTitle+'\"]")');
+    let element = await this.driver.$('.gh-content-status-published');
     return await element.click();
   });
 
