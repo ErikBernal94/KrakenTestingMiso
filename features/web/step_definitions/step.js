@@ -2,20 +2,14 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const expect = require('chai').expect;
 
 When('I enter email {kraken-string}', async function (email) {
-
     let element = await this.driver.$('.email');
-
     return await element.setValue(email);
-
 });
 
 
 When('I enter password {kraken-string}', async function (password) {
-
     let element = await this.driver.$('.password');
-
     return await element.setValue(password);
-
 });
 
 
@@ -69,11 +63,8 @@ When('I click publish button', async function () {
 });
 
 When('I click confirm publish button', async function () {
-
     let element = await this.driver.$('.gh-btn-black');
-
     return await element.click();
-
 });
 
 When('I click the post item of list {kraken-string}', async function (postTitle) {
@@ -101,11 +92,9 @@ When('I click filter published post', async function () {
 });
 
 When('I click the go back post list', async function () {
-
     let element = await this.driver.$('a[href=\"#/posts/\"]');
     return await element.click();
-
-  });
+});
 
 
 Then('I review the item of list {kraken-string}', async function (postTitle) {
@@ -114,10 +103,8 @@ Then('I review the item of list {kraken-string}', async function (postTitle) {
   });
 
 When('I click on view site', async function() {
-
-    let element = await this.driver.$('a[href=\"#/site//\"]');
+    let element = await this.driver.$('a[href=\"#/site/\"]');
     return await element.click();
-
 });
  
 Then('I review the post not published of list {kraken-string}', async function (postTitle) {
@@ -136,11 +123,32 @@ When('I review the item of list posts {kraken-string}', async function (postTitl
     return await element.click();
 });
 
-When('I click on schedule button', async function () {
-    let element = await this.driver.$('//div[contains(., \"Schedule it for later\")]');
+When('I click on schedule radio button', async function () {
+    let element = await this.driver.$('//div[text()=\'Schedule it for later\']');
     return await element.click();
 });
 
+When('I set time on schedule button confirm', async function () {
+    let element = await this.driver.$('//span[text()=\'Schedule\']');
+    return await element.click();
+});
+
+When('I click Update button', async function () {
+    let element = await this.driver.$('//span[text()=\'Update\']');
+    return await element.click();
+});
+
+Then('I review the post is published {kraken-string}', async function (postTitle) {
+    let element = await this.driver.$$('//h2[text()=\''+postTitle+'\']');
+    expect(element.lenght).to.not.equal(0);
+});
+
+Then('I review the post not published of list, be schedule {kraken-string}', async function (postTitle) {
+    let element = await this.driver.$$('//h3[contains(., \''+postTitle+'\')]');
+    let draftelement = await this.driver.$$('//span[contains( .,\"Scheduled\")]');
+    expect(element.lenght).to.not.equal(0);
+    expect(draftelement.lenght).to.not.equal(0);
+});
 //#endregion  post
 
 //#region pages
@@ -214,11 +222,8 @@ When('I click filter published pages', async function () {
 });
 
 When('I click filter draft pages', async function () {
-
     let element = await this.driver.$('//li[text()=\'Draft pages\']');
-
     return await element.click();
-
 });
 
 Then('I review the page item of list {kraken-string}', async function (pageTitle) {
@@ -260,3 +265,46 @@ Then('I review no member activity yet', async function () {
 });
 
 //#endregion Dashboard
+
+
+//#region Memeber
+
+When('I click the go Members', async function () {
+    let element = await this.driver.$('a[href=\"#/members/\"]');
+    return await element.click();
+});
+
+
+When('I click button New member', async function () {
+    let element = await this.driver.$('//span[text()=\'New member\']');
+    return await element.click();
+});
+
+
+When('I enter name member {kraken-string}', async function (nameMember) {
+    let element = await this.driver.$('#member-name');
+    return await element.setValue(nameMember);
+});
+
+When('I enter email member {kraken-string}', async function (nameMember) {
+    let element = await this.driver.$('#member-email');
+    return await element.setValue(nameMember);
+});
+
+When('I click button Save member', async function () {
+    let element = await this.driver.$('//span[text()=\'Save\']');
+    return await element.click();
+});
+
+Then('I check error email', async function () {
+    let element = await this.driver.$('//p[text()=\'Invalid Email.\']');
+    expect(element.lenght).to.not.equal(0);
+});
+
+
+Then('I check the name member of list {kraken-string}', async function (nameMember) {
+    let element = await this.driver.$('//h3[contains(., \''+nameMember+'\')]');
+    expect(element.lenght).to.not.equal(0);
+
+});
+//#endregion

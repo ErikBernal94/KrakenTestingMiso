@@ -1,9 +1,9 @@
-Feature: Iniciar sesion
+Feature: crear post con horario
 
 
 @user1 @web
 
-Scenario: Como usuario inicio sesion 
+Scenario: Como usuario programo un post para publicar
 
   Given I navigate to page "http://localhost:2368/ghost"
 
@@ -29,9 +29,15 @@ Scenario: Como usuario inicio sesion
 
   And I publish post
 
-  And I click on schedule button
+  And I click on schedule radio button
 
-  
+  And I set time on schedule button confirm
 
+  And I click confirm publish button
 
+  And I click the go back post list
+
+  And I wait for 2 seconds
+
+  Then I review the post not published of list, be schedule "<POSTTITLE-SCHEDULE>"
   

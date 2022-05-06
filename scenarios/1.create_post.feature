@@ -1,9 +1,9 @@
-Feature: Iniciar sesion
+Feature: Crear post
 
 
 @user1 @web
 
-Scenario: Como usuario inicio sesion 
+Scenario: Como usuario creo un post 
 
   Given I navigate to page "http://localhost:2368/ghost"
 

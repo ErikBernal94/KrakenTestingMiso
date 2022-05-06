@@ -1,9 +1,9 @@
-Feature: Iniciar sesion
+Feature: crear, modificar y verificar en el landing page
 
 
 @user1 @web
 
-Scenario: Como usuario inicio sesion 
+Scenario: Como usuario creo, modifico y verifico la publicacion del post
 
   Given I navigate to page "http://localhost:2368/ghost"
 
@@ -23,7 +23,7 @@ Scenario: Como usuario inicio sesion
 
   And I click on new post
   
-  And I enter post title "<POSTTITLE-MODIFIED-OLD-DELETE>"
+  And I enter post title "<POSTTITLE-REVIEW-OLD>"
 
   And I enter post content "<POSTCONTENT>"
 
@@ -39,13 +39,15 @@ Scenario: Como usuario inicio sesion
 
   And I wait for 2 seconds
 
-  And I review the post  published of viewsite "<POSTTITLE-MODIFIED-OLD-DELETE>"
+  And I click on view site
+
+  And I review the post  published of viewsite "<POSTTITLE-REVIEW-OLD>"
 
   And I click the go back post list
 
-  And I review the item of list posts "<POSTTITLE-MODIFIED-OLD-DELETE>"
+  And I review the item of list posts "<POSTTITLE-REVIEW-OLD>"
 
-  And I enter post title "<POSTTITLE-MODIFIED-NEW>"
+  And I enter post title "<POSTTITLE-REVIEW-NEW>"
 
   And I publish post
 
@@ -59,15 +61,6 @@ Scenario: Como usuario inicio sesion
 
   And I wait for 2 seconds
 
-  And  I review the item of list posts "<POSTTITLE-MODIFIED-NEW-DELETE>"
+  And I click on view site
 
-  And I click the toggle button
-
-  And I click on delete post button
-
-  And I click on delete confirmation
-
-  And I wait for 2 seconds
-
-  Then I review the page were deleted of list "<DELETEDPAGETITLE>"
-
+  Then I review the post is published "<POSTTITLE-REVIEW-NEW>"

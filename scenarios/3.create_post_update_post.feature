@@ -1,9 +1,9 @@
-Feature: Iniciar sesion
+Feature: Crear y modificar post
 
 
 @user1 @web
 
-Scenario: Como usuario inicio sesion 
+Scenario: Como usuario creo y modifico un post
 
   Given I navigate to page "http://localhost:2368/ghost"
 
@@ -38,6 +38,8 @@ Scenario: Como usuario inicio sesion
   And I click the go back post list
 
   And I wait for 2 seconds
+
+  And I click on view site
 
   And I review the post  published of viewsite "<POSTTITLE-MODIFIED-OLD>"
 

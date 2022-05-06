@@ -1,9 +1,9 @@
-Feature: Iniciar sesion
+Feature: Crear post borrador
 
 
 @user1 @web
 
-Scenario: Como usuario inicio sesion 
+Scenario: Como usuario creo un post borrador 
 
   Given I navigate to page "http://localhost:2368/ghost"
 
