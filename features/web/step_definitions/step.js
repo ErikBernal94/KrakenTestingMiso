@@ -116,23 +116,42 @@ When('I click the go back page list', async function () {
     return await element.click();
   });
 
-  //I click the page item of list 
+  //settings-menu-toggle
 When('I click the page item of list {kraken-string}', async function (pageTitle) {
-    // let element = await this.driver.$$('h3[aria-label=\"'+pageTitle+'\"]")');
-    let element = await this.driver.$('.gh-content-status-published');
+     let element = await this.driver.$('//h3[contains(., \''+pageTitle+'\')]');
     return await element.click();
   });
 
+When('I click the toggle button', async function () {
+    let element = await this.driver.$('.settings-menu-toggle');
+   return await element.click();
+ });
+
+ When('I click on delete button', async function () {
+    let element = await this.driver.$('//span[contains(., \'Delete page\')]');
+   return await element.click();
+ });
+
+ When('I click on delete confirmation', async function () {
+    let element = await this.driver.$('//span[text()=\'Delete\']');
+   return await element.click();
+ });
+
 Then('I review the page item of list {kraken-string}', async function (pageTitle) {
-    let element = await this.driver.$$('h3[aria-label=\"'+pageTitle+'\"]');
+    let element = await this.driver.$$('//h3[contains(., \''+pageTitle+'\')]');
     expect(element.lenght).to.not.equal(0);
   });
 
 Then('I review the page not published of list {kraken-string}', async function (pageTitle) {
-    let element = await this.driver.$$('h3[aria-label=\"'+pageTitle+'\"]');
-    let draftelement = await this.driver.$$('span[aria-label=\"Draft\"]');
+    let element = await this.driver.$$('//h3[contains(., \''+pageTitle+'\')]');
+    let draftelement = await this.driver.$$('//span[contains( .,=\"Draft\")]');
     expect(element.lenght).to.not.equal(0);
     expect(draftelement.lenght).to.not.equal(0);
+});
+
+Then('I review the page were deleted of list {kraken-string}', async function (pageTitle) {
+    let element = await this.driver.$$('//h3[text()=\''+pageTitle+'\']');
+    expect(element.lenght).to.equal(undefined);
 });
 
   
