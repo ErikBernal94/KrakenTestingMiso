@@ -76,12 +76,44 @@ When('I click confirm publish button', async function () {
 
 });
 
+When('I click the post item of list {kraken-string}', async function (postTitle) {
+
+    let element = await this.driver.$('//h3[contains(., \''+postTitle+'\')]');
+
+    return await element.click();
+
+});
+
+When('I click filter post list', async function () {
+
+    let element = await this.driver.$('//span[text()=\'All posts\']');
+
+    return await element.click();
+
+});
+
+When('I click filter published post', async function () {
+
+    let element = await this.driver.$('//li[text()=\'Published posts\']');
+
+    return await element.click();
+
+});
+
 When('I click the go back post list', async function () {
 
     let element = await this.driver.$('a[href=\"#/posts/\"]');
     return await element.click();
 
   });
+
+  When('I click filter draft posts', async function () {
+
+    let element = await this.driver.$('//li[text()=\'Draft posts\']');
+
+    return await element.click();
+
+});
 
 Then('I review the item of list {kraken-string}', async function (postTitle) {
     let element = await this.driver.$$('h3[aria-label=\"'+postTitle+'\"]');
@@ -137,6 +169,32 @@ When('I click the toggle button', async function () {
    return await element.click();
  });
 
+ When('I click on unpublish', async function () {
+    let element = await this.driver.$('//div[text()=\'Unpublished\']');
+   return await element.click();
+ });
+
+ When('I click filter page list', async function () {
+    let element = await this.driver.$('//span[text()=\'All pages\']');
+    return await element.click();
+});
+
+When('I click filter published pages', async function () {
+
+    let element = await this.driver.$('//li[text()=\'Published pages\']');
+
+    return await element.click();
+
+});
+
+When('I click filter draft pages', async function () {
+
+    let element = await this.driver.$('//li[text()=\'Draft pages\']');
+
+    return await element.click();
+
+});
+
 Then('I review the page item of list {kraken-string}', async function (pageTitle) {
     let element = await this.driver.$$('//h3[contains(., \''+pageTitle+'\')]');
     expect(element.lenght).to.not.equal(0);
@@ -144,7 +202,7 @@ Then('I review the page item of list {kraken-string}', async function (pageTitle
 
 Then('I review the page not published of list {kraken-string}', async function (pageTitle) {
     let element = await this.driver.$$('//h3[contains(., \''+pageTitle+'\')]');
-    let draftelement = await this.driver.$$('//span[contains( .,=\"Draft\")]');
+    let draftelement = await this.driver.$$('//span[contains(., \"Draft\")]');
     expect(element.lenght).to.not.equal(0);
     expect(draftelement.lenght).to.not.equal(0);
 });
@@ -156,3 +214,22 @@ Then('I review the page were deleted of list {kraken-string}', async function (p
 
   
 //#endregion pages
+
+//#region Dashboard
+
+When('I click on dashboard', async function() {
+    let element = await this.driver.$('a[href=\"#/dashboard/\"]');
+    return await element.click();
+});
+
+When('I click on see all activity', async function() {
+    let element = await this.driver.$('//a[contains(., \"See all activity\")]');
+    return await element.click();
+});
+
+Then('I review no member activity yet', async function () {
+    let element = await this.driver.$$('//h3[contains(., \"No member activity yet\")]');
+    expect(element.lenght).to.not.equal(0);
+});
+
+//#endregion Dashboard
