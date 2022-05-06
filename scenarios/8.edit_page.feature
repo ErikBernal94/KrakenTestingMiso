@@ -5,7 +5,7 @@ Feature: Crear una pagina y editarla
 
 Scenario: Como usuario creo una pagina y despues la edito 
 
-  Given I navigate to page "http://localhost:2368/ghost"
+  Given I navigate to page "<GHOST-URL>"
 
   And I wait for 5 seconds
 

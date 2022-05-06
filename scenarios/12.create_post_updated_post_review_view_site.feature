@@ -5,7 +5,7 @@ Feature: crear, modificar y verificar en el landing page
 
 Scenario: Como usuario creo, modifico y verifico la publicacion del post
 
-  Given I navigate to page "http://localhost:2368/ghost"
+  Given I navigate to page "<GHOST-URL>"
 
   And I wait for 5 seconds
 

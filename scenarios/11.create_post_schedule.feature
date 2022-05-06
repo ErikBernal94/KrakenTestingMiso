@@ -5,7 +5,7 @@ Feature: crear post con horario
 
 Scenario: Como usuario programo un post para publicar
 
-  Given I navigate to page "http://localhost:2368/ghost"
+  Given I navigate to page "<GHOST-URL>"
 
   And I wait for 5 seconds
 

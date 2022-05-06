@@ -226,6 +226,11 @@ When('I click filter draft pages', async function () {
     return await element.click();
 });
 
+When('I click filter draft posts', async function () {
+    let element = await this.driver.$('//li[text()=\'Draft posts\']');
+    return await element.click();
+});
+
 Then('I review the page item of list {kraken-string}', async function (pageTitle) {
     let element = await this.driver.$$('//h3[contains(., \''+pageTitle+'\')]');
     expect(element.lenght).to.not.equal(0);

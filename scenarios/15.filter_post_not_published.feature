@@ -5,7 +5,7 @@ Feature: Filtrar post que no fueron publicados
 
 Scenario: Como usuario creo un post, lo marco como no publicado, filtro por no publicado y valido que esté en la lista 
 
-  Given I navigate to page "http://localhost:2369/ghost"
+  Given I navigate to page "<GHOST-URL>"
 
   And I wait for 5 seconds
 

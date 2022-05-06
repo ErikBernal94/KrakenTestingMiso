@@ -1,11 +1,11 @@
-Feature: Filtrar pagina
+Feature: Crear pagina
 
 
 @user1 @web
 
-Scenario: Como usuario creo una pagina, filtro por publicada y valido que esté en la lista 
+Scenario: Como usuario creo una pagina 
 
-  Given I navigate to page "http://localhost:2369/ghost"
+  Given I navigate to page "<GHOST-URL>"
 
   And I wait for 5 seconds
 
@@ -25,7 +25,7 @@ Scenario: Como usuario creo una pagina, filtro por publicada y valido que esté 
 
   And I click on New page
   
-  And I enter page title "<FILTEREDPAGETITLE>"
+  And I enter page title "<CREATEDPAGETITLE>"
 
   And I enter page content "<PAGECONTENT>"
 
@@ -39,8 +39,4 @@ Scenario: Como usuario creo una pagina, filtro por publicada y valido que esté 
 
   And I wait for 2 seconds
 
-  And I click filter page list
-
-  And I click filter published pages
-
-  Then I review the page item of list "<FILTEREDPAGETITLE>"
+  Then I review the page item of list "<CREATEDPAGETITLE>"

@@ -5,7 +5,7 @@ Feature: Crear y borrar post
 
 Scenario: Como usuario creo y elimino un post
 
-  Given I navigate to page "http://localhost:2368/ghost"
+  Given I navigate to page "<GHOST-URL>"
 
   And I wait for 5 seconds
 

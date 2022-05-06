@@ -5,7 +5,7 @@ Feature: crear post y modificar el horario de publicacion
 
 Scenario: Como usuario creo el post y modifico el horario de publicacion
 
-  Given I navigate to page "http://localhost:2368/ghost"
+  Given I navigate to page "<GHOST-URL>"
 
   And I wait for 5 seconds
 

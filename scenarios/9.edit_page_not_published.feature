@@ -5,7 +5,7 @@ Feature: Crear una pagina, editarla y no publicarla
 
 Scenario: Como usuario creo una pagina, despues la edito y la marco para no publicarla  
 
-  Given I navigate to page "http://localhost:2368/ghost"
+  Given I navigate to page "<GHOST-URL>"
 
   And I wait for 5 seconds
 

@@ -5,7 +5,7 @@ Feature: Crear post borrador
 
 Scenario: Como usuario creo un post borrador 
 
-  Given I navigate to page "http://localhost:2368/ghost"
+  Given I navigate to page "<GHOST-URL>"
 
   And I wait for 5 seconds
 
