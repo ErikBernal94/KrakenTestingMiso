@@ -5,7 +5,7 @@ Feature: Crear una pagina y editarla
 
 Scenario: Como usuario creo una pagina y despues la edito 
 
-  Given I navigate to page "http://localhost:2369/ghost"
+  Given I navigate to page "http://localhost:2368/ghost"
 
   And I wait for 5 seconds
 
@@ -54,5 +54,3 @@ Scenario: Como usuario creo una pagina y despues la edito
   And I click the go back page list
 
   And I wait for 2 seconds
-
-  Then I review the page item of list "<EDITEDPAGETITLE>"

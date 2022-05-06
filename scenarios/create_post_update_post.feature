@@ -23,7 +23,7 @@ Scenario: Como usuario inicio sesion
 
   And I click on new post
   
-  And I enter post title "<POSTTITLE>"
+  And I enter post title "<POSTTITLE-MODIFIED-OLD>"
 
   And I enter post content "<POSTCONTENT>"
 
@@ -39,4 +39,24 @@ Scenario: Como usuario inicio sesion
 
   And I wait for 2 seconds
 
-  Then I review the item of list "<POSTTITLE>"
+  And I review the post  published of viewsite "<POSTTITLE-MODIFIED-OLD>"
+
+  And I click the go back post list
+
+  And I review the item of list posts "<POSTTITLE-MODIFIED-OLD>"
+
+  And I enter post title "<POSTTITLE-MODIFIED-NEW>"
+
+  And I publish post
+
+  And I click publish button
+
+  And I click confirm publish button
+
+  And I wait for 2 seconds
+
+  And I click the go back post list
+
+  And I wait for 2 seconds
+
+  Then I review the item of list "<POSTTITLE-MODIFIED-NEW>"

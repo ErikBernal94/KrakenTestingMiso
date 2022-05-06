@@ -23,20 +23,12 @@ Scenario: Como usuario inicio sesion
 
   And I click on new post
   
-  And I enter post title "<POSTTITLE>"
+  And I enter post title "<POSTTITLEDRAFT>"
 
-  And I enter post content "<POSTCONTENT>"
-
-  And I publish post
-
-  And I click publish button
-
-  And I click confirm publish button
-
-  And I wait for 2 seconds
+  And I enter post content "<POSTCONTENT>"  
 
   And I click the go back post list
 
   And I wait for 2 seconds
 
-  Then I review the item of list "<POSTTITLE>"
+  Then I review the post not published of list "<POSTTITLEDRAFT>"

@@ -83,10 +83,39 @@ When('I click the go back post list', async function () {
 
   });
 
+
 Then('I review the item of list {kraken-string}', async function (postTitle) {
     let element = await this.driver.$$('h3[aria-label=\"'+postTitle+'\"]');
     expect(element.lenght).not.equal(0);
   });
+
+When('I click on view site', async function() {
+
+    let element = await this.driver.$('a[href=\"#/site//\"]');
+    return await element.click();
+
+});
+ 
+Then('I review the post not published of list {kraken-string}', async function (postTitle) {
+    let element = await this.driver.$$('//h3[contains(., \''+postTitle+'\')]');
+    let draftelement = await this.driver.$$('//span[contains( .,\"Draft\")]');
+    expect(element.lenght).to.not.equal(0);
+    expect(draftelement.lenght).to.not.equal(0);
+});
+
+When('I review the post  published of viewsite {kraken-string}', async function (postTitle) {
+    let element = await this.driver.$$('//h2[contains(., \''+postTitle+'\')]');    
+});
+
+When('I review the item of list posts {kraken-string}', async function (postTitle) {
+    let element = await this.driver.$('//h3[contains(., \''+postTitle+'\')]');
+    return await element.click();
+});
+
+When('I click on schedule button', async function () {
+    let element = await this.driver.$('//div[contains(., \"Schedule it for later\")]');
+    return await element.click();
+});
 
 //#endregion  post
 
@@ -137,6 +166,11 @@ When('I click the toggle button', async function () {
    return await element.click();
  });
 
+ When('I click on delete post button', async function () {
+    let element = await this.driver.$('//span[contains(., \'Delete post\')]');
+   return await element.click();
+ });
+
 Then('I review the page item of list {kraken-string}', async function (pageTitle) {
     let element = await this.driver.$$('//h3[contains(., \''+pageTitle+'\')]');
     expect(element.lenght).to.not.equal(0);
@@ -153,6 +187,7 @@ Then('I review the page were deleted of list {kraken-string}', async function (p
     let element = await this.driver.$$('//h3[text()=\''+pageTitle+'\']');
     expect(element.lenght).to.equal(undefined);
 });
+
 
   
 //#endregion pages

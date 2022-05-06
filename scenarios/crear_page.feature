@@ -5,7 +5,7 @@ Feature: Crear post
 
 Scenario: Como usuario creo un post 
 
-  Given I navigate to page "http://localhost:2369/ghost"
+  Given I navigate to page "http://localhost:2368/ghost"
 
   And I wait for 5 seconds
 
