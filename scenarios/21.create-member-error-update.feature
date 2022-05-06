@@ -1,9 +1,9 @@
-Feature: crear miembro validando error
+Feature: crear miembro, modificarlo , verificar error y corregirlo para modificar
 
 
 @user1 @web
 
-Scenario: Como usuario creo valido errores creando un miembro
+Scenario: Como usuario creo, valido y modifico un miembro
 
   Given I navigate to page "http://localhost:2368/ghost"
 
