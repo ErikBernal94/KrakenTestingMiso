@@ -296,6 +296,20 @@ When('I click button Save member', async function () {
     return await element.click();
 });
 
+When('I click button Retry member', async function () {
+    let element = await this.driver.$('//span[text()=\'Retry\']');
+    return await element.click();
+});
+
+When('I see error email', async function () {
+    let element = await this.driver.$('//p[text()=\'Invalid Email.\']');
+});
+
+When('I click the name member of list {kraken-string}', async function (nameMember) {
+    let element = await this.driver.$('//h3[contains(., \''+nameMember+'\')]');
+    return await element.click();
+});
+
 Then('I check error email', async function () {
     let element = await this.driver.$('//p[text()=\'Invalid Email.\']');
     expect(element.lenght).to.not.equal(0);
@@ -306,5 +320,10 @@ Then('I check the name member of list {kraken-string}', async function (nameMemb
     let element = await this.driver.$('//h3[contains(., \''+nameMember+'\')]');
     expect(element.lenght).to.not.equal(0);
 
+});
+
+When('I enter note for member {kraken-string}', async function (testNote) {
+    let element = await this.driver.$('#member-note');
+    return await element.setValue(testNote);
 });
 //#endregion

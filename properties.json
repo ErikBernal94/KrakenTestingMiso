@@ -28,6 +28,11 @@
     "FILTEREDPOSTNOTPUBLISHEDTITLE": "TITULO POST A FILTRAR",
     "DELETEDPAGECONTENT": "CONTENIDO PAGINA A ELIMINAR",
     "NAME-MEMBER-CREATE": "Erik Bernal",
-    "EMAIL-MEMBER-CREATE-ERROR": "Erik Bernal",
-    "EMAIL-MEMBER-CREATE": "erikbernal@gm.com"
+    "EMAIL-MEMBER-CREATE-ERROR": "Carolina Bernal",
+    "EMAIL-MEMBER-CREATE": "erikbernal@gm.com",
+    "NAME-MEMBER-CREATE-UPDATE": "Carolina Lopez",
+    "EMAIL-MEMBER-CREATE-ERROR-UPDATE": "caro lopez",
+    "EMAIL-MEMBER-CREATE-UPDATE": "carolina@gm.com",
+    "NOTE-MEMBER-UPDATE": "DESCRIPTION MEMBER",
+    "NAME-MEMBER-UPDATE": "Carolina Lopez Santana"
 }
