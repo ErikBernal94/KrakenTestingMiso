@@ -33,11 +33,11 @@ Scenario: Como usuario creo el post y modifico el horario de publicacion
 
   And I click confirm publish button
 
-  And I wait for 2 seconds
+  And I wait for 10 seconds
 
   And I click the go back post list
 
-  And I wait for 2 seconds
+  And I wait for 10 seconds
 
   And I click on view site
 

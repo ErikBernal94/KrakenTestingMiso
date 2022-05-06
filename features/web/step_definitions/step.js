@@ -315,6 +315,26 @@ When('I click the name member of list {kraken-string}', async function (nameMemb
     return await element.click();
 });
 
+When('I click button tools', async function () {
+    let element = await this.driver.$('.dropdown');
+    return await element.click();
+});
+
+When('I click button delete', async function () {
+    let element = await this.driver.$('//span[text()=\'Delete\']');
+    return await element.click();
+});
+
+When('I click button delete confirm', async function () {
+    let element = await this.driver.$('//span[text()=\'Delete member\']');
+    return await element.click();
+});
+
+When('I enter note for member {kraken-string}', async function (testNote) {
+    let element = await this.driver.$('#member-note');
+    return await element.setValue(testNote);
+});
+
 Then('I check error email', async function () {
     let element = await this.driver.$('//p[text()=\'Invalid Email.\']');
     expect(element.lenght).to.not.equal(0);
@@ -327,8 +347,10 @@ Then('I check the name member of list {kraken-string}', async function (nameMemb
 
 });
 
-When('I enter note for member {kraken-string}', async function (testNote) {
-    let element = await this.driver.$('#member-note');
-    return await element.setValue(testNote);
+Then('I check the name member of list doesnt appears {kraken-string}', async function (nameMember) {
+    let element = await this.driver.$('//h3[contains(., \''+nameMember+'\')]');
+    expect(element.lenght).to.equal(undefined);
 });
+
+
 //#endregion
