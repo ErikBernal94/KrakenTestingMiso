@@ -24,7 +24,7 @@ Scenario: Creo una pagina pero no es publicada
 
   And I click on New page
   
-  And I enter page title "<PAGETITLE>"
+  And I enter page title "<CREATEDPAGENOTPUBLISHEDTITLE>"
 
   And I enter page content "<PAGECONTENT>"
 
@@ -34,4 +34,4 @@ Scenario: Creo una pagina pero no es publicada
 
   And I wait for 2 seconds
 
-  Then I review the page not published of list "<PAGETITLE>"
+  Then I review the page not published of list "<CREATEDPAGENOTPUBLISHEDTITLE>"
