@@ -83,6 +83,6 @@ Scenario: Como usuario creo el post y modifico el horario de publicacion
 
   And I click confirm publish button
 
-  And wait 2 seconds
+  And I wait for 2 seconds
 
   Then I review the page not published of list "<EDITEDPAGENOTPUBLISHEDTITLE>"

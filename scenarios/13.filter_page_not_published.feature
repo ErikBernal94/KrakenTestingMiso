@@ -5,7 +5,7 @@ Feature: Filtro de páginas no publicadas
 
 Scenario:  Como usuario creo una pagina, la marco para no publicarla, filtro por paginas no publicadas y verifico que este en la lista  
 
-  Given I navigate to page "http://localhost:2369/ghost"
+  Given I navigate to page "http://localhost:2368/ghost"
 
   And I wait for 5 seconds
 
