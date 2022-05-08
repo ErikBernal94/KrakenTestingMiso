@@ -5,7 +5,7 @@ Feature: crear , modificar y eleiminar un miembro
 
 Scenario: Como usuario creo, modifico y elimino un miembro
 
-  Given I navigate to page "http://localhost:2368/ghost"
+  Given I navigate to page "<GHOST-URL>"
 
   And I wait for 5 seconds
 
