@@ -1,7 +1,7 @@
 {
     "GHOST-URL": "http://localhost:2369/ghost",
-    "USERNAME1": "ed.bernalc1@uniandes.edu.co",
-    "PASSWORD1": "Erik941228",
+    "USERNAME1": "usuario@ghost.com",
+    "PASSWORD1": "Usuario1234567",
     "POSTTITLE": "TITULO POST UNO",
     "POSTTITLEDRAFT": "TITULO POST UNO BORRADOR",
     "POSTTITLE-MODIFIED-OLD": "TITULO POST UNO MODIFICADO ANTERIOR",
